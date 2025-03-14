@@ -1,4 +1,5 @@
 ﻿namespace ECommerce.Application.DTOs;
+
 public class CategoryDto
 {
     public int Id { get; set; }

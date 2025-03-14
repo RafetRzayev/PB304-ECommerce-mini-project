@@ -1,4 +1,5 @@
 ﻿using ECommerce.Application.DTOs;
+using ECommerce.Application.Extensions;
 using ECommerce.Application.Interfaces;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Interfaces;
@@ -17,10 +18,7 @@ public class CategoryManager : ICategoryService
 
     public void Add(CategoryCreateDto createDto)
     {
-        var category = new Category
-        {
-            Name = createDto.Name 
-        };
+        var category = createDto.ToCategory();
 
         _repository.Add(category);
     }
@@ -29,11 +27,7 @@ public class CategoryManager : ICategoryService
     {
         var category = _repository.Get(predicate);
 
-        var categoryDto = new CategoryDto
-        {
-            Id = category.Id,
-            Name = category.Name
-        };
+        var categoryDto = category.ToCategoryDto();
 
         return categoryDto;
     }
