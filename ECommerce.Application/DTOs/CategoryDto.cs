@@ -1,4 +1,6 @@
-﻿namespace ECommerce.Application.DTOs;
+﻿using ECommerce.Domain.Entities;
+
+namespace ECommerce.Application.DTOs;
 
 public class CategoryDto
 {
@@ -9,6 +11,15 @@ public class CategoryDto
 public class CategoryCreateDto
 {
     public required string Name { get; set; }
+
+    public Category ToCategory()
+    {
+        return new Category
+        {
+            Name = Name
+        };
+    }
+
 }
 
 public class CategoryUpdateDto

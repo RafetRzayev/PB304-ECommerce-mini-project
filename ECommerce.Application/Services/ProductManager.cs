@@ -5,9 +5,9 @@ using ECommerce.Domain.Interfaces;
 
 namespace ECommerce.Application.Services;
 
-public class CategoryManager : CrudManager<Category, CategoryDto, CategoryCreateDto, CategoryUpdateDto>, ICategoryService
+public class ProductManager : CrudManager<Product, ProductDto, ProductCreateDto, ProductUpdateDto>, IProductService
 {
-    public CategoryManager(IRepository<Category> repository) : base(repository)
+    public ProductManager(IRepository<Product> repository) : base(repository)
     {
     }
 }
