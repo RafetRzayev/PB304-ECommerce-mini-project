@@ -18,13 +18,13 @@ namespace ECommerce.UI
             AppDbContext appDbContext = new AppDbContext();
             IProductRepository productRepository1 = new ProductRepository(appDbContext);
             ProductManager productManager = new ProductManager(productRepository1);
+
             var product = productManager.Get(x => x.Price > 0);
             //foreach (var item in productManager.GetAll())
             //{
             //    Console.WriteLine($"{item.Id} {item.Name} {item.CategoryName}");
             //}
-
-
+            //
         }
     }
 }
